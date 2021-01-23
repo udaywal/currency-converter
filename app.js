@@ -20,7 +20,7 @@ app.use(morgan('dev'));
 app.use(cors());
 
 app.listen(port);
-mongoose.connect(appConfig.development.url, { useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true })
+mongoose.connect(appConfig.production.url, { useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true })
 console.log('🚀 The magic happens on port ' + port);
 // if (!env) {
 //   app.listen(appConfig.development.port);
