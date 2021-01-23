@@ -4,19 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "npm i;node app.js",
+    "start": "nodemon app.js",
     "prod": "SET NODE_ENV=production & nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vaibhav Udaywal",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "latest",
-    "cookie-parser": "latest",
-    "cors": "latest",
-    "express": "latest",
-    "mongoose": "latest",
-    "morgan": "latest",
-    "nodemon": "latest"
+    "body-parser": "1.19.0",
+    "cookie-parser": "1.4.5",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "mongoose": "5.11.13",
+    "morgan": "1.10.0",
+    "nodemon": "2.0.7"
   }
 }
