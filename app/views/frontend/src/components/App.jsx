@@ -13,7 +13,7 @@ function App() {
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/currency/list`)
+        axios.get(`https://global-currency-converter.herokuapp.com/api/v1/currency/list`)
         .then(res => {
             console.log(res.data);
             let data = res.data.data.map(c => {
