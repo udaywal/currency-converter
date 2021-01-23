@@ -10,6 +10,8 @@ const appConfig = require('./config/appConfig');
 const port = process.env.PORT || 5000
 const url = process.env.DATABASE_URI || appConfig.development.url
 
+console.log(url);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
