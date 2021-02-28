@@ -3,14 +3,15 @@ import axios from 'axios';
 
 function CurrencyList (props) {
 
-    console.log(props);
+    // console.log(props);
 
     const [rates, setRates] = useState({ 'INR': 0, 'AUD': 0, 'CAD': 0, 'JPY': 0 })
 
     useEffect(() => {
+        console.log("Invoked when component gets rendered.")
         axios.get(`https://api.exchangeratesapi.io/latest?base=${props.currency}`)
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             let data = res.data.rates
             setRates({ 
                 'INR': parseFloat(data.INR).toFixed(2), 
@@ -20,7 +21,17 @@ function CurrencyList (props) {
             })
         })
         .catch(err => console.log(err))
+        return () => {
+            console.log("useEffect cleanup function called to get pre-render values", props, rates)
+        }
     }, [props.currency])
+
+    useEffect(() => {
+        console.log("Invoked when component gets mounted.");
+        return () => {
+            console.log("Invoked when component gets un-mounted.")
+        }
+    }, [])
 
     return (
         <div className="row d-flex flex-column currency-row">
